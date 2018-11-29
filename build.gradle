@@ -1,0 +1,16 @@
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'eclipse'
+
+sourceCompatibility='1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile "io.undertow:undertow-core:2.0.12.Final"
+	compile "io.undertow:undertow-servlet:2.0.12.Final"
+}
+
+mainClassName = 'com.dynatrace.undertow.reproducer.UndertowServletSample'

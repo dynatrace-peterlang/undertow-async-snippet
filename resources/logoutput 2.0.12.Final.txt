@@ -1,0 +1,13 @@
+Nov 16, 2018 8:46:48 AM org.xnio.Xnio <clinit>
+INFO: XNIO version 3.3.8.Final
+Nov 16, 2018 8:46:48 AM org.xnio.nio.NioXnio <clinit>
+INFO: XNIO NIO Implementation Version 3.3.8.Final
+Nov 16, 2018 8:46:58 AM io.undertow.servlet.api.LoggingExceptionHandler handleThrowable
+ERROR: UT005023: Exception handling request to /sample/error
+java.lang.NullPointerException
+	at com.dynatrace.undertow.reproducer.AsyncErrorServlet.doGet(AsyncErrorServlet.java:24)
+	...
+	at java.lang.Thread.run(Thread.java:813)
+
+08:58:872 LoggingAsyncListener.onError(status = 200)
+08:58:872   throwable = java.lang.NullPointerException
