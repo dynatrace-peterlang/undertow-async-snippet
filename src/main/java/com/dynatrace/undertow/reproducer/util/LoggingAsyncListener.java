@@ -2,6 +2,7 @@ package com.dynatrace.undertow.reproducer.util;
 
 import java.io.IOException;
 
+import javax.servlet.AsyncContext;
 import javax.servlet.AsyncEvent;
 import javax.servlet.AsyncListener;
 import javax.servlet.http.HttpServletResponse;
@@ -33,7 +34,7 @@ public class LoggingAsyncListener implements AsyncListener {
 		Util.trace("LoggingAsyncListener.onError(status = " + response.getStatus() + ")");
 		Throwable throwable = event.getThrowable();
 		if (throwable != null) {
-			Util.trace("  throwable = " + throwable.getClass().getName());
+			Util.trace("  throwable = " + throwable.getClass().getName() + " id: " + System.identityHashCode(throwable));
 		}
 	}
 	

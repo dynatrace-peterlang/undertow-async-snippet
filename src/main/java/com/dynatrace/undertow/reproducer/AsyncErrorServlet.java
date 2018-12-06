@@ -19,8 +19,9 @@ public class AsyncErrorServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		final AsyncContext context = request.startAsync(); 
+		final AsyncContext context = request.startAsync();
 		context.addListener(new LoggingAsyncListener());
+		context.addListener(new ErrorHandlingAsyncListener());
 		context.setTimeout(3000);
 		throw new NullPointerException();
 	}
